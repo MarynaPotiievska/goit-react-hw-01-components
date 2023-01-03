@@ -1,5 +1,14 @@
 import PropTypes from 'prop-types';
-import { UserCard, StatsInfoList, UserAvatar, UserName } from './Profile.styled';
+import {
+  UserCard,
+  UserInfoThumb,
+  UserAvatar,
+  UserName,
+  UserInfo,
+  StatsInfoList,
+  StatsData,
+  StatsInfo
+} from './Profile.styled';
 
 export const Profile = ({
   username,
@@ -10,26 +19,26 @@ export const Profile = ({
 }) => {
   return (
     <UserCard>
-      <div>
+      <UserInfoThumb>
         <UserAvatar src={avatar} alt="User avatar" />
         <UserName>{username}</UserName>
-        <p>&#64;{tag}</p>
-        <p>{location}</p>
-      </div>
+        <UserInfo>&#64;{tag}</UserInfo>
+        <UserInfo>{location}</UserInfo>
+      </UserInfoThumb>
 
       <StatsInfoList>
-        <li>
-          <span>Followers</span>
-          <span>{followers}</span>
-        </li>
-        <li>
-          <span>Views</span>
-          <span>{views}</span>
-        </li>
-        <li>
-          <span>Likes</span>
-          <span>{likes}</span>
-        </li>
+        <StatsData>
+          <StatsInfo>Followers</StatsInfo>
+          <StatsInfo>{followers}</StatsInfo>
+        </StatsData>
+        <StatsData>
+          <StatsInfo>Views</StatsInfo>
+          <StatsInfo>{views}</StatsInfo>
+        </StatsData>
+        <StatsData>
+          <StatsInfo>Likes</StatsInfo>
+          <StatsInfo>{likes}</StatsInfo>
+        </StatsData>
       </StatsInfoList>
     </UserCard>
   );
@@ -41,8 +50,8 @@ Profile.propTypes = {
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
   stats: PropTypes.exact({
-	followers: PropTypes.number.isRequired,
-	views: PropTypes.number.isRequired,
-	likes: PropTypes.number.isRequired
-  })
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
