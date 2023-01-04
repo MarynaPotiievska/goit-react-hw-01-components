@@ -14,6 +14,7 @@ export const StatsCard = styled.section`
 	text-align: center;
 	border-radius: 4px;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+	margin-bottom: 24px;
 `;
 
 export const Title = styled.h2`
